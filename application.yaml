@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: eks-hello-linux-app
+spec:
+  destination:
+    name: ''
+    namespace: eks-hello-app
+    server: >-
+      https://8B9DB5FDD6FC52B193626E4EA26D7BB2.gr7.ap-southeast-1.eks.amazonaws.com
+  source:
+    path: hello-app
+    repoURL: 'https://github.com/txnt3ch/hello-helm'
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml
+  project: default
