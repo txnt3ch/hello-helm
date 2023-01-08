@@ -1,6 +1,7 @@
 environment: development
 container:
   name: hello-container
+  namespace: eks-hello-app
   port: 80
   image: 588184019567.dkr.ecr.ap-southeast-1.amazonaws.com/hello/helloservice
   tag: 7c331f7286a832c5680fab99f813b0f720bd0fd8
